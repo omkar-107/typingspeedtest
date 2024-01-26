@@ -1,6 +1,6 @@
 # Typing Speed Test
 
-![Typing Speed Test Image](/public/)
+![Typing Speed Test Image](/public/img.png)
 
 ## Description
 
