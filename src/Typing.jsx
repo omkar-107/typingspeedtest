@@ -39,6 +39,24 @@ const TypingTest = () => {
     }
   }, [completed, wordsCorrect, timeFlag]);
 
+  useEffect(() => {
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    var viewMode = getCookie("view-mode");
+    var viewport = document.querySelector("meta[name=viewport]");
+
+    if(viewMode === "desktop"){ 
+      viewport.setAttribute('content', 'width=1024'); 
+    } else if (viewMode === "mobile"){ 
+      viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'); 
+    }
+  }, []);
+
+
   
   
 
@@ -133,7 +151,7 @@ const TypingTest = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 py-8 min-h-screen bg-black text-gray-400">
+    <div className="container mx-auto px-6 py-8 min-h-screen min-w-screen bg-black text-gray-400">
       <h1 className="text-4xl font-mono text-yellow-400 text-left w-2/4 mx-auto mt-5">
         Typing Speed Test
       </h1>
