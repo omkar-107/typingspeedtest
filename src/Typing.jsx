@@ -143,6 +143,7 @@ const TypingTest = () => {
 
   const restart = () => {
     dispatch(updateWordsCorrect(0));
+    displayTest(difficulty);
     setWordNo(0);
     setCorrectFlag(0);
     timeFlag === 0 ? setTimer(30) : setTimer(60);
